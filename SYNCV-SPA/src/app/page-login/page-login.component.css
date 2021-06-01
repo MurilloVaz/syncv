@@ -1,0 +1,11 @@
+.gradient-indigo-blue {
+    background-image: -webkit-linear-gradient(45deg, #6875cb, #1f24a2);
+    background-image: -moz-linear-gradient(45deg, #6875cb, #1f24a2);
+    background-image: -o-linear-gradient(45deg, #6875cb, #1f24a2);
+    background-image: linear-gradient(45deg, #6875cb, #1f24a2);
+    background-repeat: repeat-x;
+}
+
+.brq-blue{
+    background-color:#3f88a8 !important;
+}

@@ -1,0 +1,124 @@
+<div class="content-wrapper">
+  <section id="regestration">
+    <div class="container">
+      <div class="row full-height-vh">
+        <div class="col-1">
+        </div>
+        <div class="col-10 d-flex align-items-center justify-content-center">
+          <div class="card">
+            <div class="card-body">
+              <div class="row d-flex">
+                <div class="col-12 col-sm-12 col-md-6 gradient-deep-orange-orange disapear-sm">
+                  <div class="card-block">
+                    <div class="card-img overlap">
+                      <img alt="Card image cap" src="../../assets/img/elements/13.png" width="350"
+                        class="mx-auto d-block">
+                    </div>
+                    <h2 class="card-title font-large-1 text-center white mt-3">Registração</h2>
+                  </div>
+                </div>
+                <div class="col-lg-12 appear-sm">
+
+                  <div class="col-12 col-sm-12 col-md-6 gradient-deep-orange-orange">
+                    <div class="card-header">
+                      <h3 class="card-title text-center white mt-3">Registração</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 d-flex align-items-center">
+                  <div class="card-block mx-auto">
+                    <form #registrationForm="ngForm" (ngSubmit)="register()" class="ml-1 row">
+
+                      <div class="input-group mb-3 row">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="icon-user"></i>
+                          </span>
+                        </div>
+                        <input #name="ngModel" [ngClass]="{'is-invalid': name.errors && name.touched}"
+                          [(ngModel)]="userRegister.Name" class="form-control" minlength="6" name="name" id="name"
+                          placeholder="Nome" required>
+                        <span [hidden]="!name.errors?.required" class="invalid-feedback">
+                          Nome é necessário
+                        </span>
+                        <span [hidden]="!name.errors?.minlength" class="invalid-feedback">
+                          Nome tem que possuir mais de 5 caracteres
+                        </span>
+                      </div>
+
+                      <div class="input-group mb-3 row">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="icon-user"></i>
+                          </span>
+                        </div>
+                        <input #username="ngModel" [ngClass]="{'is-invalid': username.errors && username.touched}"
+                          [(ngModel)]="userRegister.Username" class="form-control" minlength="6" name="username"
+                          id="username" placeholder="Username" required>
+                        <div [hidden]="!username.errors?.required" class="invalid-feedback">
+                          Username é necessário
+                        </div>
+                        <div [hidden]="!username.errors?.minlength" class="invalid-feedback">
+                          Username tem que possuir mais de 5 caracteres
+                        </div>
+                      </div>
+                      <div class="input-group mb-3 row">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="ft-mail"></i>
+                          </span>
+                        </div>
+                        <input #email="ngModel" [ngClass]="{'is-invalid': email.errors && email.touched}"
+                          [(ngModel)]="userRegister.Email" class="form-control" type="email" name="email" id="email"
+                          placeholder="Email" required email>
+                        <div [hidden]="!email.errors?.required" class="invalid-feedback">
+                          Email é necessário
+                        </div>
+
+                        <div [hidden]="!email.errors?.email" class="invalid-feedback">
+                          Email não é valido
+                        </div>
+                      </div>
+                      <div class="input-group mb-3 row">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                            <i class="ft-lock"></i>
+                          </span>
+                        </div>
+                        <input #password="ngModel" [ngClass]="{'is-invalid': password.errors && password.touched}"
+                          [(ngModel)]="userRegister.Password" class="form-control" minlength="6" name="password"
+                          id="password" placeholder="Senha" required type="password">
+                        <div [hidden]="!password.errors?.required" class="invalid-feedback">
+                          Senha é necessária
+                        </div>
+                        <div [hidden]="!password.errors?.minlength" class="invalid-feedback">
+                          Senha tem que possuir mais de 5 caracteres
+                        </div>
+                      </div>
+                      <div class="form-group col-sm-offset-1">
+                        <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
+                          <input type="checkbox" [(ngModel)]="termsAccepted" class="custom-control-input" id="terms"
+                            name="terms">
+                          <label class="custom-control-label pl-2" for="terms">Eu aceito <a>os termos e condições</a></label>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-12">
+                        <div class="text-center">
+                          <button type="submit" [disabled]="registrationForm.invalid"
+                            class="btn btn-warning btn-raised">Registrar</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1">
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

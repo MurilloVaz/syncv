@@ -1,0 +1,26 @@
+<div data-active-color="white" data-background-color="purple-bliss" data-image="../../assets/img/sidebar-bg/01.jpg"
+  class="app-sidebar">
+  <div class="sidebar-header">
+    <div class="logo clearfix"><a class="logo-text float-left">
+        <div class="logo-img"><img src="../../assets/img/logos/newlogo-small.svg" /></div><span
+          class="text align-middle">SYNC-V</span>
+      </a><a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i
+          data-toggle="expanded" class="ft-toggle-right toggle-icon"></i></a><a id="sidebarClose" href="javascript:;"
+        class="nav-close d-block d-md-block d-lg-none d-xl-none"><i class="ft-x"></i></a></div>
+  </div>
+  <div class="sidebar-content">
+    <div class="nav-container">
+      <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
+        <li class="has-sub nav-item"><a><i class="ft-home"></i><span data-i18n="" class="menu-title">Home</span>
+          </a>
+          <ul class="menu-content">
+            <li routerLinkActive="active"><a [routerLink]="['/videosync']" class="menu-item">Sincronizar vídeo</a>
+            </li>
+          </ul>
+        </li>
+       
+      </ul>
+    </div>
+  </div>
+  <div class="sidebar-background"></div>
+</div>

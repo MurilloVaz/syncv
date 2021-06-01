@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-faded" style="position: relative !important">
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" data-toggle="collapse" class="navbar-toggle d-lg-none float-left"><span
+          class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span
+          class="icon-bar"></span></button>
+
+      <form tooltip="Em breve :)" role="search" class="navbar-form navbar-right mt-1">
+
+        <div class="position-relative has-icon-right">
+          <input disabled type="text" placeholder="Buscar..." class="form-control round disabled" />
+          <div class="form-control-position"><i class="ft-search"></i></div>
+        </div>
+      </form>
+    </div>
+    <div class="navbar-container">
+      <div id="navbarSupportedContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+
+          <li tooltip="Em breve :)" class="dropdown nav-item"><a id="dropdownBasic3" href="#" data-toggle="dropdown"
+              class="nav-link position-relative dropdown-toggle  disabled"><i
+                class="ft-flag font-medium-3 blue-grey darken-4"></i><span class="selected-language d-none"></span></a>
+            <div class="dropdown-menu dropdown-menu-right"><a href="javascript:;" class="dropdown-item py-1"><img
+                  src="../../assets/img/flags/us.png" class="langimg" /><span> English</span></a><a href="javascript:;"
+                class="dropdown-item py-1"><img src="../../assets/img/flags/es.png" class="langimg" /><span>
+                  Spanish</span></a><a href="javascript:;" class="dropdown-item py-1"><img
+                  src="../../assets/img/flags/br.png" class="langimg" /><span> Portuguese</span></a><a
+                href="javascript:;" class="dropdown-item"><img src="../../assets/img/flags/de.png"
+                  class="langimg" /><span> French</span></a></div>
+          </li>
+          <li class="dropdown nav-item"><a id="dropdownBasic2" href="#" data-toggle="dropdown"
+              class="nav-link position-relative dropdown-toggle"><i
+                class="ft-bell font-medium-3 blue-grey darken-4"></i><span
+                class="notification badge badge-pill badge-danger">1</span>
+              <p class="d-none">Notifications</p>
+            </a>
+            <div class="notification-dropdown dropdown-menu dropdown-menu-right">
+              <div class="noti-list"><a
+                  class="dropdown-item noti-container py-3 border-bottom border-bottom-blue-grey border-bottom-lighten-4"><i
+                    class="ft-bell info float-left d-block font-large-1 mt-1 mr-2"></i><span class="noti-wrapper"><span
+                      class="noti-title line-height-1 d-block text-bold-400 info">Bem-vindo!</span><span class="noti-text">Seja muito bem-vindo! :D</span></span></a></div><a disabled tooltip="Em breve :)"
+                class="disabled noti-footer primary text-center d-block border-top border-top-blue-grey border-top-lighten-4 text-bold-400 py-1">Ver
+                todas</a>
+            </div>
+          </li>
+          <li class="dropdown nav-item"><a id="dropdownBasic3" href="#" data-toggle="dropdown"
+              class="nav-link position-relative dropdown-toggle"><i
+                class="ft-user font-medium-3 blue-grey darken-4"></i>
+              <p class="d-none">User Settings</p>
+            </a>
+            <div ngbdropdownmenu="" aria-labelledby="dropdownBasic3" class="dropdown-menu dropdown-menu-right">
+              <div (click)="logOut()">
+                <a class="dropdown-item py-1">
+                  <i class="ft-power mr-2"></i><span>Logout</span></a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

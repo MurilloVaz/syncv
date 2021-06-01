@@ -1,0 +1,69 @@
+<div class="content-wrapper">
+  <section id="login">
+    <div class="container-fluid">
+      <div class="row full-height-vh">
+        <div class="col-12 d-flex align-items-center justify-content-center">
+          <div class="card gradient-indigo-blue text-center width-400">
+            <div class="card-img overlap">
+              <img alt="element 06" class="mb-1" src="../assets/img/logos/newlogo.svg" width="260">
+            </div>
+            <form #loginForm="ngForm" (ngSubmit)="login()">
+
+              <div class="card-body">
+                <div class="card-block">
+                  <h2 class="white">Login</h2>
+                  <div class="form-group">
+                    <div class="col-md-12">
+                      <input type="text" required #username="ngModel"
+                        [ngClass]="{'is-invalid': username.errors && username.touched}" [(ngModel)]="userLogin.Username"
+                        class="form-control" name="username" id="username" placeholder="Username">
+
+                      <div [hidden]="!username.errors?.required" class="invalid-feedback">
+                        Username é necessário
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-md-12">
+                      <input #password="ngModel" [ngClass]="{'is-invalid': password.errors && password.touched}"
+                        [(ngModel)]="userLogin.Password" type="password" class="form-control" name="password"
+                        id="password" placeholder="Senha" required>
+                      <div [hidden]="!password.errors?.required" class="invalid-feedback">
+                        Senha é necessária
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0 ml-3">
+                          <input type="checkbox" class="custom-control-input" name="rememberMe" [(ngModel)]="userLogin.RememberMe"
+                          [ngModelOptions]="{standalone: true}" id="rememberMe">
+                          <label class="custom-control-label float-left white" for="rememberMe">Lembrar de mim</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-md-12">
+                      <button type="submit" [disabled]="!loginForm.form.valid"
+                        class="btn btn-block btn-primary">Entrar</button>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </form>
+            <div class="card-footer">
+              <div class="float-right"><a class="white" [routerLink]="['/register']">Novo usuário?</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SyncV</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    .preLoad {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "montserrat", sans-serif;
+    }
+
+    .loading {
+      width: 200px;
+      height: 200px;
+      box-sizing: border-box;
+      border-radius: 50%;
+      border-top: 10px solid rgb(180, 180, 180);
+      position: relative;
+      animation: a1 2s linear infinite;
+    }
+
+    .loading::before,
+    .loading::after {
+      content: '';
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      left: 0;
+      top: -10px;
+      box-sizing: border-box;
+      border-radius: 50%;
+    }
+
+    .loading::before {
+      border-top: 10px solid #e67e22;
+      transform: rotate(120deg);
+    }
+
+    .loading::after {
+      border-top: 10px solid #3498db;
+      transform: rotate(240deg);
+    }
+
+    .loading span {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      color: #3498db;
+      text-align: center;
+      line-height: 200px;
+      animation: a2 2s linear infinite;
+    }
+
+    @keyframes a1 {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes a2 {
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+  </style>
+</head>
+
+<body class="preLoad">
+  <div class="loading" id="preloader">
+    <span>
+      <img style="width: 6.5em" style="margin-top:15px" src="./assets/img/logos/newlogo.svg" alt="" srcset="">
+  </div>
+  <app-root></app-root>
+  <script>
+    window.paceOptions = { ajax: { ignoreURLs: ['mainHub', '__browserLink', 'browserLinkSignalR'], trackWebSockets: false } }
+  </script>
+</body>
+
+</html>

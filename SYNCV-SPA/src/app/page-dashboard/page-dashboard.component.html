@@ -1,0 +1,45 @@
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+      <glowy-card title="Todas tentativas" cardStyle="gradient-blackberry" value="{{this.logs}}"
+        iconClass="icon-graph font-large-1">
+      </glowy-card>
+    </div>
+
+    <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+      <glowy-card title="Tentativas com erro" cardStyle="gradient-ibiza-sunset" value="{{this.errorLogs}}"
+        iconClass="icon-graph font-large-1">
+      </glowy-card>
+    </div>
+
+    <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+      <glowy-card title="Tentativas com sucesso" cardStyle="gradient-green-tea" value="{{this.successLogs}}"
+        iconClass="icon-graph font-large-1">
+      </glowy-card>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">TENTATIVAS DE AUTENTICAÇÃO</h4>
+        </div>
+        <div class="card-body">
+          <div class="card-block">
+            <div class="chart-info mb-3 ml-3">
+              <span class="gradient-blackberry d-inline-block rounded-circle mr-1"
+                style="width:15px; height:15px;"></span> Tentativas mal sucedidas
+              <span class="gradient-mint d-inline-block rounded-circle mr-1 ml-2"
+                style="width:15px; height:15px;"></span> Tentativas bem sucedidas
+            </div>
+            <div id="line-area" class="height-350 lineArea">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

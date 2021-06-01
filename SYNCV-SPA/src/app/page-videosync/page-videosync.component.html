@@ -1,0 +1,87 @@
+<div class="content-wrapper">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">VÍDEO ({{player?.getVideoUrl()}})</h4>
+        </div>
+        <div  class="card-body">
+          <div  class="card-block">
+            <form #videoForm="ngForm" (ngSubmit)="setVideo()">
+              <div class="form-row align-items-top">
+                <div class="col-lg-8">
+                  <div class="input-group mb-2 form-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">Entrar</div>
+                    </div>
+                    <input type="text" required #video="ngModel"
+                      [ngClass]="{'is-invalid': video.errors && video.touched}" [(ngModel)]="videoUrl"
+                      class="form-control" name="video" id="video" placeholder="https://www.youtube.com/watch?v=j3sks_CJoZ0">
+                    <div [hidden]="!video.errors?.required" class="invalid-feedback">
+                      Url do vídeo é necessária
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-auto">
+                  <button type="submit" [disabled]="!videoForm.form.valid"
+                    class="btn btn-primary mb-2">Selecionar</button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+          <div  class="row">
+            <div   #container class="col-12 mx-auto pl-4 pr-4">
+              <youtube-player [width]="getWidth(container.offsetWidth)"  *ngIf="canInit()" [videoId]="sync.videoId" (ready)="savePlayer($event)" (change)="onStateChange($event)">
+              </youtube-player>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">SESSÃO ({{sessionLogin.Id}})</h4>
+        </div>
+        <div class="card-body">
+          <div class="card-block">
+            <form #sessionForm="ngForm" (ngSubmit)="initSession()">
+              <div class="form-row align-items-top">
+                <div class="col-lg-8">
+                  <div class="input-group mb-2 form-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">Entrar</div>
+                    </div>
+                    <input type="text" required #session="ngModel"
+                      [ngClass]="{'is-invalid': session.errors && session.touched}" [(ngModel)]="sessionLogin.Id"
+                      class="form-control" name="session" id="session" placeholder="#0000">
+                    <div [hidden]="!session.errors?.required" class="invalid-feedback">
+                      Id da sessão é necessário
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-auto">
+                  <button type="submit" [disabled]="!sessionForm.form.valid"
+                    class="btn btn-primary mb-2">Entrar</button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>
